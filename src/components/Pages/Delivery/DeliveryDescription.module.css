@@ -1,0 +1,15 @@
+.delivery-description {
+  background-color: #fdf2e9;
+  height: 40rem;
+}
+.delivery-description-text-box {
+  display: grid;
+  row-gap: 2rem;
+  margin: 10rem auto;
+  height: 5rem;
+  width: 50rem;
+  text-align: start;
+}
+.delivery-heading-primary {
+  margin-top: 10rem;
+}

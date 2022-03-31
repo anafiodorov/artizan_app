@@ -1,5 +1,6 @@
 
 .main{
+  background-color: #fdf2e9;
   display: grid;
   grid-template-columns: 0.1fr 0.8fr 3fr 0.1fr 0.1fr;
   align-items: center;
@@ -48,6 +49,8 @@
   font-weight: 1000;
   font-size: 3rem;
   font-family: 'Marck Script', cursive;
+  text-decoration: none;
+  color: black;
 }
 .align{
   text-align: center;

@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import classes from './Home.module.css';
 import Description from '../Layout/Description';
 import Footer from '../Layout/Footer';
 import Header from '../Layout/Header';
+import { productsActions } from '../../store/products';
+import { brandsActions } from '../../store/brands';
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [brands, setBrands] = useState([]);
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.products);
+  const brands = useSelector((state) => state.brands.brands);
 
   useEffect(() => {
     let isMounted = true;
@@ -18,20 +22,8 @@ const Home = () => {
       const brands = await responseBrands.json();
 
       if (isMounted) {
-        setProducts(
-          products.map((item) => ({
-            key: item.product_id,
-            id: item.product_id,
-            name: item.name,
-          }))
-        );
-        setBrands(
-          brands.map((item) => ({
-            key: item.brand_id,
-            id: item.brand_id,
-            name: item.brand_name,
-          }))
-        );
+        dispatch(productsActions.addProducts(products));
+        dispatch(brandsActions.addBrands(brands));
       }
     };
 

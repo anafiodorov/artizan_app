@@ -21,7 +21,7 @@ const Description = () => {
             înconjurător, prin pastrarea valorii in interiorul comunitatii.
           </p>
         </div>
-        <div className={classes['hero-img-box']}>
+        <div>
           <img
             src={oldMen}
             alt='Crafts image'

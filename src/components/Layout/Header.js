@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import classes from './Header.module.css';
 import artisan from '../../img/artisan.jpeg';
 import Button from '../UI/Button';
@@ -10,13 +11,15 @@ const Header = (props) => {
       <a href='#'>
         <img src={artisan} alt='Artizan logo' className={classes.img} />
       </a>
-      <div className={classes.title}>Artizan</div>
+      <Link to='/' className={classes.title}>
+        Artizan
+      </Link>
       <nav className={classes['main-nav']}>
         <ul className={classes['main-nav-list']}>
           <li>
-            <a className={classes['main-nav-link']} href='#'>
+            <Link className={classes['main-nav-link']} to='/'>
               Acasa
-            </a>
+            </Link>
           </li>
           <li>
             <a className={classes['main-nav-link']} href='#'>
@@ -35,22 +38,21 @@ const Header = (props) => {
             </div>
           </li>
           <li>
-            <a className={classes['main-nav-link']} href='#'>
+            <Link className={classes['main-nav-link']} to='/delivery'>
               Livrari
-            </a>
-          </li>
-          <li>
-            <a className={classes['main-nav-link']} href='#'>
-              Reduceri
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
       <div>
-        <Button>Login</Button>
+        <Link to='/login'>
+          <Button>Login</Button>
+        </Link>
       </div>
       <div className={classes.align}>
-        <Button>SignIn</Button>
+        <Link to='/signUp'>
+          <Button>SignIn</Button>
+        </Link>
       </div>
     </div>
   );
