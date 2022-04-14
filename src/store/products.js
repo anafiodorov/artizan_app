@@ -8,8 +8,8 @@ const productsSlice = createSlice({
   reducers: {
     addProducts(state, action) {
       state.products = action.payload.map((item) => ({
-        key: item.product_id,
-        id: item.product_id,
+        key: item.id,
+        id: item.id,
         name: item.name,
       }));
     },

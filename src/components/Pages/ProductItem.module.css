@@ -1,0 +1,48 @@
+.gallery-item img {
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+.gallery-item {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  overflow: hidden;
+  transition: all 0.4s;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+.gallery-title{
+  margin-top: 2rem;
+}
+.gallery-price{
+  margin-top: 1rem;
+}
+button{
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  min-width: 10px;
+  width: 15px;
+  height: 40px;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  width: 8rem;
+  justify-self: center;
+}
+ 
+button:hover {
+  background-color: white; 
+  color: black;
+  border: 1px solid black;
+}

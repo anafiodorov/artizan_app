@@ -1,0 +1,49 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem;
+}
+.circle  {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid rgb(167, 162, 162);
+}
+
+.color-red {
+  background: red;
+}
+.color-white {
+  background: white;
+}
+.color-blue {
+  background: blue;
+}
+.color-green {
+  background: green;
+}
+.color-black {
+  background: black;
+}
+.color-pink {
+  background: pink;
+}
+.color-yellow {
+  background: yellow;
+}
+.color-orange {
+  background: orange;
+}
+.color-brown {
+  background: brown;
+}
+.color-violet {
+  background: violet;
+}
+.color-grey {
+  background: grey;
+}
+.color-turquoise {
+  background: turquoise;
+}

@@ -1,11 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Header.module.css';
 import artisan from '../../img/artisan.jpeg';
 import Button from '../UI/Button';
 import Menu from './Menu';
+import { useSelector, useDispatch } from 'react-redux';
+import { productsActions } from '../../store/products';
+import { brandsActions } from '../../store/brands';
 
 const Header = (props) => {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.products);
+  const brands = useSelector((state) => state.brands.brands);
+
+  useEffect(() => {
+    let isMounted = true;
+    const fetchData = async () => {
+      const responseProducts = await fetch('http://localhost:3001/categories');
+      const products = await responseProducts.json();
+
+      const responseBrands = await fetch('http://localhost:3001/brands');
+      const brands = await responseBrands.json();
+
+      if (isMounted) {
+        dispatch(productsActions.addProducts(products));
+        dispatch(brandsActions.addBrands(brands));
+      }
+    };
+
+    fetchData();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <div className={classes.main}>
       <a href='#'>
@@ -26,7 +54,7 @@ const Header = (props) => {
               Produse
             </a>
             <div className={classes['main-nav-submenu']}>
-              <Menu items={props.products} />
+              <Menu items={products} />
             </div>
           </li>
           <li>
@@ -34,7 +62,7 @@ const Header = (props) => {
               Branduri
             </a>
             <div className={classes['main-nav-submenu']}>
-              <Menu items={props.brands} />
+              <Menu items={brands} />
             </div>
           </li>
           <li>

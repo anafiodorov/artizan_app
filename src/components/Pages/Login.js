@@ -6,8 +6,6 @@ import { useSelector } from 'react-redux';
 import Header from '../Layout/Header';
 
 const Login = () => {
-  const products = useSelector((state) => state.products.products);
-  const brands = useSelector((state) => state.brands.brands);
   let navigate = useNavigate();
   const [userInput, setUserInput] = useState({
     email: '',
@@ -50,7 +48,7 @@ const Login = () => {
   };
   return (
     <Fragment>
-      <Header products={products} brands={brands} />
+      <Header />
       <div className={classes.main}>
         <form action='#' className={classes['cta-form']}>
           <div>

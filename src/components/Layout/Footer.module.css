@@ -1,12 +1,14 @@
 .footer {
-  padding: 12.8rem 0;
   border-top: 1px solid black;
 }
+.main{
+  background-color: #fdf2e9;
+}
 .container {
-  max-width: 120rem;
+  /* max-width: 120rem; */
   padding: 0 3.2rem;
   margin: 0 auto;
-  max-width: 130rem;
+  /* max-width: 130rem; */
 }
 .grid {
   display: grid;
@@ -15,6 +17,7 @@
 }
 .grid--footer{
   grid-template-columns: 1.5fr 1.5fr 1.5fr;
+  
 }
 
 .logo-col{

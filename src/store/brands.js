@@ -8,9 +8,9 @@ const brandsSlice = createSlice({
   reducers: {
     addBrands(state, action) {
       state.brands = action.payload.map((item) => ({
-        key: item.brand_id,
-        id: item.brand_id,
-        name: item.brand_name,
+        key: item.id,
+        id: item.id,
+        name: item.name,
       }));
     },
   },

@@ -1,0 +1,21 @@
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  gap: 6rem;
+  padding: 2rem;
+  background-color: #fdf2e9;
+  height: 160vh;
+}
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.collapsible {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+}

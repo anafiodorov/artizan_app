@@ -6,8 +6,6 @@ import Header from '../Layout/Header';
 import classes from './SignUp.module.css';
 
 const SignUp = () => {
-  const products = useSelector((state) => state.products.products);
-  const brands = useSelector((state) => state.brands.brands);
   let navigate = useNavigate();
   const [userInput, setUserInput] = useState({
     firstName: '',
@@ -83,7 +81,7 @@ const SignUp = () => {
   };
   return (
     <Fragment>
-      <Header products={products} brands={brands} />
+      <Header />
       <div className={classes.main}>
         <form action='#' className={classes['cta-form']}>
           <div>
@@ -161,7 +159,7 @@ const SignUp = () => {
             className={classes['btn--form']}
             onClick={submitHandler}
           >
-            Sign up now
+            Sign in
           </button>
         </form>
       </div>

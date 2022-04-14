@@ -24,16 +24,13 @@ html {
   position: absolute;
   top: 13%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 10%);
   width: 30rem;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2.4rem;
 }
-.btn--form {
-  width:13rem;
-  justify-self: center;
-}
+
 .cta-form label {
   display: block;
   font-size: 1.2rem;
@@ -53,17 +50,28 @@ html {
 }
 
 .btn--form{
-  font: inherit;
-  cursor: pointer;
-  background-color: rgb(56, 54, 54);
-  border: 1px solid;
+  display: inline-block;
+  min-width: 10px;
+  width: 20px;
+  height: 40px;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+  background-color: black;
   color: white;
-  border-radius: 20px;
-  font-weight: bold;
-  height: 3rem;
-  width: 8rem;
-  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
 }
 
-
-
+.btn--form {
+  width: 8rem;
+  justify-self: center;
+}
+.btn--form:hover {
+  background-color: white; 
+  color: black;
+  border: 1px solid black;
+}

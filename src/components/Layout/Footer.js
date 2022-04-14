@@ -3,7 +3,7 @@ import classes from './Footer.module.css';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className={classes.main}>
       <div
         className={`${classes.container} ${classes.grid} ${classes['grid--footer']}`}
       >
