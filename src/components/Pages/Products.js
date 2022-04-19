@@ -9,6 +9,7 @@ import ColorPicker from '../UI/ColorPicker';
 import Size from '../UI/Size';
 import Arrow from '../UI/Arrow';
 import Composition from '../UI/Composition';
+import generalStyles from '../../styles/general.module.css';
 
 const Products = () => {
   let { category } = useParams();
@@ -53,7 +54,9 @@ const Products = () => {
   return (
     <Fragment>
       <Header />
-      <div className={classes.gallery}>
+      <div
+        className={`${classes.gallery} ${generalStyles['background-color']}`}
+      >
         <aside>
           <div></div>
           <form action=''>

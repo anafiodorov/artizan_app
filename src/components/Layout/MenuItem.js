@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const MenuItem = (props) => {
   return (
-    <a className={classes.item} href='#'>
-      <div>
-        <Link to={`/products/${props.name}`}>{props.name}</Link>
-      </div>
-    </a>
+    <div className={classes.item}>
+      <Link className={classes.link} to={`/products/${props.name}`}>
+        {props.name}
+      </Link>
+    </div>
   );
 };
 

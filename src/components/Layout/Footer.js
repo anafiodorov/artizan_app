@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './Footer.module.css';
-
+import generalStyles from '../../styles/general.module.css';
 const Footer = () => {
   return (
-    <footer className={classes.main}>
+    <footer className={generalStyles['background-color']}>
       <div
         className={`${classes.container} ${classes.grid} ${classes['grid--footer']}`}
       >

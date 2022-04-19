@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Header.module.css';
-import artisan from '../../img/artisan.jpeg';
-import Button from '../UI/Button';
 import Menu from './Menu';
 import { useSelector, useDispatch } from 'react-redux';
 import { productsActions } from '../../store/products';
 import { brandsActions } from '../../store/brands';
+import Cart from '../Cart/Cart';
+import generalStyles from '../../styles/general.module.css';
+import Search from '../Cart/Search';
+import CartDetails from '../Cart/CartDetails';
 
 const Header = (props) => {
   const dispatch = useDispatch();
@@ -35,54 +37,47 @@ const Header = (props) => {
   }, []);
 
   return (
-    <div className={classes.main}>
-      <a href='#'>
-        <img src={artisan} alt='Artizan logo' className={classes.img} />
-      </a>
-      <Link to='/' className={classes.title}>
-        Artizan
-      </Link>
-      <nav className={classes['main-nav']}>
-        <ul className={classes['main-nav-list']}>
-          <li>
-            <Link className={classes['main-nav-link']} to='/'>
-              Acasa
-            </Link>
-          </li>
-          <li>
-            <a className={classes['main-nav-link']} href='#'>
-              Produse
-            </a>
-            <div className={classes['main-nav-submenu']}>
-              <Menu items={products} />
-            </div>
-          </li>
-          <li>
-            <a className={classes['main-nav-link']} href='#'>
-              Branduri
-            </a>
-            <div className={classes['main-nav-submenu']}>
-              <Menu items={brands} />
-            </div>
-          </li>
-          <li>
-            <Link className={classes['main-nav-link']} to='/delivery'>
-              Livrari
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <Link to='/login'>
-          <Button>Login</Button>
+    <Fragment>
+      <div className={`${classes.main} ${generalStyles['background-color']}`}>
+        <Link to='/' className={classes.title}>
+          Artizan
         </Link>
+        <nav className={classes['main-nav']}>
+          <ul className={classes['main-nav-list']}>
+            <li>
+              <Link className={classes['main-nav-link']} to='/'>
+                Acasa
+              </Link>
+            </li>
+            <li>
+              <a className={classes['main-nav-link']} href='#'>
+                Produse
+              </a>
+              <div className={classes['main-nav-submenu']}>
+                <Menu items={products} />
+              </div>
+            </li>
+            <li>
+              <a className={classes['main-nav-link']} href='#'>
+                Branduri
+              </a>
+              <div className={classes['main-nav-submenu']}>
+                <Menu items={brands} />
+              </div>
+            </li>
+            <li>
+              <Link className={classes['main-nav-link']} to='/delivery'>
+                Livrari
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <div className={classes['serch-cart-totalAmount']}>
+          <Search />
+          <Cart />
+        </div>
       </div>
-      <div className={classes.align}>
-        <Link to='/signUp'>
-          <Button>SignIn</Button>
-        </Link>
-      </div>
-    </div>
+    </Fragment>
   );
 };
 

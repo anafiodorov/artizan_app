@@ -1,10 +1,13 @@
 import React from 'react';
 import oldMen from '../../img/oldMen.jpeg';
 import classes from './Description.module.css';
+import generalStyles from '../../styles/general.module.css';
 
 const Description = () => {
   return (
-    <section className={classes['section-description']}>
+    <section
+      className={`${generalStyles['background-color']} ${classes['section-description']}`}
+    >
       <div className={classes['description']}>
         <div className={classes['description-text-box']}>
           <h1 className={classes['heading-primary']}>

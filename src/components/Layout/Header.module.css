@@ -1,11 +1,11 @@
 
 .main{
-  background-color: #fdf2e9;
   display: grid;
-  grid-template-columns: 0.1fr 0.8fr 3fr 0.1fr 0.1fr;
+  grid-template-columns: 0.8fr 4fr 0.1fr;
   align-items: center;
+  justify-items: center;
   gap: 1rem;
-  padding: 2rem;
+  padding: 4rem 8rem 4rem 8rem ;
 }
 .main-nav-list {
   list-style: none;
@@ -15,9 +15,11 @@
   font-family: 'Marck Script', cursive;
  
 }
+.main-nav-link{
+  position: relative;
+}
 .main-nav-link:link,
 .main-nav-link:visited {
-  position: relative;
   display: inline-block;
   text-decoration: none;
   color: #333;
@@ -27,7 +29,8 @@
 }
 .main-nav-link:hover,
 .main-nav-link:active {
-  color: #cf711f;
+  border-bottom: 2px solid rgb(24, 23, 23);
+  transition: outline 0.6s linear;
 }
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
@@ -70,3 +73,8 @@
 .main-nav{
   justify-self: center;
 }
+.serch-cart-totalAmount{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+}
+
