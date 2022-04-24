@@ -3,11 +3,11 @@
   grid-template-columns: 1fr 6fr;
   gap: 6rem;
   padding: 2rem;
-  height: 160vh;
+  height: 180vh;
 }
 .products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1.6rem;
 }
 

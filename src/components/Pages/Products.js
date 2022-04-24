@@ -10,10 +10,14 @@ import Size from '../UI/Size';
 import Arrow from '../UI/Arrow';
 import Composition from '../UI/Composition';
 import generalStyles from '../../styles/general.module.css';
+import { cartActions } from '../../store/cart';
+import { useDispatch } from 'react-redux';
 
 const Products = () => {
+  const dispatch = useDispatch();
+
   let { category } = useParams();
-  console.log(category);
+
   const [items, setItems] = useState([]);
   const [isCollapsedPrice, setIsCollapsedPrice] = useState(true);
   const [isCollapsedColor, setIsCollapsedColor] = useState(true);
@@ -51,6 +55,17 @@ const Products = () => {
   const collapseCompositionHandler = () => {
     setIsCollapsedComposition(!isCollapsedComposition);
   };
+  const cartItemAddHandler = (item) => {
+    dispatch(
+      cartActions.addToCart({
+        id: item.id,
+        name: item.name,
+        amount: 1,
+        price: item.price,
+      })
+    );
+    console.log(item);
+  };
   return (
     <Fragment>
       <Header />
@@ -84,7 +99,12 @@ const Products = () => {
         </aside>
         <div className={classes.products}>
           {items.map((item) => (
-            <ProductItem key={item.id} name={item.name} price={item.price} />
+            <ProductItem
+              key={item.id}
+              name={item.name}
+              price={item.price}
+              onAdd={cartItemAddHandler.bind(null, item)}
+            />
           ))}
         </div>
       </div>

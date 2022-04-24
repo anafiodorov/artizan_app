@@ -1,5 +1,4 @@
-
-.circle{
+.circle {
   margin-left: -0.3rem;
   text-align: center;
   background-color: black;
@@ -9,21 +8,104 @@
   width: 1.7rem;
   height: 1.7rem;
   border: 1px solid rgb(167, 162, 162);
-  
 }
-.cart{
+.cart {
   height: 2.5rem;
   margin-top: 0.5rem;
   padding: 0rem;
- 
 }
-.main-nav-cart-details{
+.main-nav-cart-details {
   display: none;
 }
-.cart:hover + .main-nav-cart-details{
+.cart:hover + .main-nav-cart-details {
   display: block;
 }
-.main-nav-cart-details:hover{
+.main-nav-cart-details:hover {
   display: block;
+}
+
+.cart-details {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 0.2rem;
+  right: 8rem;
+  width: 20rem;
+  background-color: white;
+  position: absolute;
+  box-shadow: 0 2.4rem 4.8rem rgba(0.075, 0.075, 0.075, 0.075);
+  border-top: 2px solid rgb(24, 23, 23);
+}
+.cart-details::after{
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 10%;
+  margin-left: -5px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+.checkout {
+  align-self: center;
+  justify-self: center;
+}
+.amount {
+  align-self: center;
+  justify-self: center;
+  font-weight: bold;
+}
+.viewcart{
+  align-self: center;
+  justify-self: center;
+}
+
+.button-viewcart {
+  /* display: inline-block; */
+  min-width: 230px;
+  height: 35px;
+  margin: 0.5rem;
+  padding: 0rem;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+  background-color: rgb(213, 207, 207);
+  color: black;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.button-viewcart:hover {
+  background-color: white; 
+  color: rgb(222, 19, 19);
+  border: 1px solid black;
+}
+.button-checkout {
+  /* display: inline-block; */
+  min-width: 230px;
+  height: 35px;
+  height: 40px;
+  margin: 0.5rem;
+  padding: 0rem;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.button-checkout:hover {
+  background-color: white; 
+  color: rgb(222, 19, 19);
+  border: 1px solid black;
 }
 

@@ -13,7 +13,14 @@ const Size = () => {
   return (
     <div className={classes.main}>
       {sizes.map((el) => {
-        return <Checkbox label={el} value={checked} onChange={handleChange} />;
+        return (
+          <Checkbox
+            key={el}
+            label={el}
+            value={checked}
+            onChange={handleChange}
+          />
+        );
       })}
     </div>
   );

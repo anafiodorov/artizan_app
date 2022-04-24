@@ -1,10 +1,11 @@
 .gallery-item img {
   display: block;
-  width: 100%;
+  width: 70%;
   transition: all 0.4s;
 }
 .gallery-item {
-  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.095);
+  padding: 2rem;
+  box-shadow: 0 0 4.8rem rgba(0, 0, 0, 0.095);
   overflow: hidden;
   transition: all 0.4s;
   display: grid;

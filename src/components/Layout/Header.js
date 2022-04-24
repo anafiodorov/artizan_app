@@ -8,7 +8,6 @@ import { brandsActions } from '../../store/brands';
 import Cart from '../Cart/Cart';
 import generalStyles from '../../styles/general.module.css';
 import Search from '../Cart/Search';
-import CartDetails from '../Cart/CartDetails';
 
 const Header = (props) => {
   const dispatch = useDispatch();

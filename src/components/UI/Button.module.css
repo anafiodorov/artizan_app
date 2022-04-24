@@ -1,8 +1,10 @@
 .button {
-  display: inline-block;
-  min-width: 100px;
+  /* display: inline-block; */
+  min-width: 150px;
   width: 20px;
   height: 40px;
+  margin: 0.5rem;
+  padding: 0rem;
   letter-spacing: 0.5px;
   font-size: 13px;
   background-color: black;
