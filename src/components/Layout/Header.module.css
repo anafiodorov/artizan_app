@@ -1,16 +1,17 @@
 
 .main{
   display: grid;
-  grid-template-columns: 0.8fr 4fr 0.1fr;
+  grid-template-columns: 0.2fr 2fr 0.2fr;
   align-items: center;
   justify-items: center;
   gap: 1rem;
-  padding: 4rem 8rem 4rem 8rem ;
+  padding: 4rem 3rem 4rem 3rem ;
 }
 .main-nav-list {
   list-style: none;
   display: flex;
   align-items:center;
+  justify-items: center;
   gap: 4.8rem;
   font-family: 'Marck Script', cursive;
  
@@ -71,9 +72,10 @@
   display: block;
 }
 .main-nav{
-  justify-self: center;
+  justify-self:center;
 }
 .serch-cart-totalAmount{
+align-self: center;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 }

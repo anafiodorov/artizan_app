@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -50,15 +51,21 @@ const Cart = () => {
             </div>
             {hasItems && (
               <div className={classes.checkout}>
-                <button className={classes['button-checkout']}>CHECKOUT</button>
+                <Link to='/checkout'>
+                  <button className={classes['button-checkout']}>
+                    CHECKOUT
+                  </button>
+                </Link>
               </div>
             )}
 
             {hasItems && (
               <div className={classes.viewcart}>
-                <button className={classes['button-viewcart']}>
-                  View Cart
-                </button>
+                <Link to='/view-cart'>
+                  <button className={classes['button-viewcart']}>
+                    View Cart
+                  </button>
+                </Link>
               </div>
             )}
           </div>

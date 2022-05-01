@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import classes from './Search.module.css';
-
+import generalStyles from '../../styles/general.module.css';
 const Search = () => {
   return (
     <Fragment>
@@ -19,6 +19,11 @@ const Search = () => {
             d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
           />
         </svg>
+        <input
+          placeholder='Search'
+          type='text'
+          className={`${generalStyles['background-color']} ${classes['search-bar']}`}
+        />
       </div>
     </Fragment>
   );

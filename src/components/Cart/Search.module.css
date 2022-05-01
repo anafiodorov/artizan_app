@@ -1,6 +1,43 @@
-
-.search{
+.search {
   height: 2rem;
   margin-top: 1.2rem;
   margin-right: 3rem;
+  position: relative;
+}
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: #eee;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+.search-bar {
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: 20px;
+  margin: 0rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  left: 72.9%;
+  top: 10%;
+  right: 17rem;
+  width: 15rem;
+  height: 3rem;
+  position: absolute;
+  border-bottom: 2px solid rgb(24, 23, 23);
+}
+
+.search-bar {
+  display: none;
+}
+.search:hover + .search-bar {
+  display: block;
+}
+.search-bar:hover {
+  display: block;
 }

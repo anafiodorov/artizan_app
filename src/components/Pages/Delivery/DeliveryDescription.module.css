@@ -4,11 +4,11 @@
 .delivery-description-text-box {
   display: grid;
   row-gap: 2rem;
-  margin: 10rem auto;
+  margin: 1rem auto;
   height: 5rem;
   width: 50rem;
   text-align: start;
 }
 .delivery-heading-primary {
-  margin-top: 10rem;
+  margin-top: 5rem;
 }

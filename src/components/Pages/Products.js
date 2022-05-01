@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import classes from './Products.module.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import ProductItem from './ProductItem';
 import Header from '../Layout/Header';
 import Footer from '../Layout/Footer';
@@ -16,7 +16,10 @@ import { useDispatch } from 'react-redux';
 const Products = () => {
   const dispatch = useDispatch();
 
-  let { category } = useParams();
+  const { search } = useLocation();
+
+  const category = new URLSearchParams(search).get('category');
+  const brand = new URLSearchParams(search).get('brand');
 
   const [items, setItems] = useState([]);
   const [isCollapsedPrice, setIsCollapsedPrice] = useState(true);
@@ -27,9 +30,14 @@ const Products = () => {
   useEffect(() => {
     let isMounted = true;
     const fetchData = async () => {
-      const items = await fetch(
-        `http://localhost:3001/products?category=${category}`
-      );
+      let url = 'http://localhost:3001/products';
+
+      if (category) {
+        url = url + `?category=${category}`;
+      } else if (brand) {
+        url = url + `?brand=${brand}`;
+      }
+      const items = await fetch(url);
       const products = await items.json();
 
       if (isMounted) {
@@ -41,7 +49,7 @@ const Products = () => {
     return () => {
       isMounted = false;
     };
-  }, [category]);
+  }, [category, brand]);
 
   const collapsePriceHandler = () => {
     setIsCollapsedPrice(!isCollapsedPrice);
@@ -73,7 +81,6 @@ const Products = () => {
         className={`${classes.gallery} ${generalStyles['background-color']}`}
       >
         <aside>
-          <div></div>
           <form action=''>
             <div className={classes.collapsible}>
               <div className={classes['title']}>Pret</div>

@@ -11,6 +11,7 @@ const brandsSlice = createSlice({
         key: item.id,
         id: item.id,
         name: item.name,
+        alias: item.alias,
       }));
     },
   },

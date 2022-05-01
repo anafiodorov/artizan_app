@@ -30,12 +30,13 @@
   display: grid;
   grid-template-columns: 1fr;
   margin-top: 0.2rem;
-  right: 8rem;
+  right: 3rem;
   width: 20rem;
   background-color: white;
   position: absolute;
   box-shadow: 0 2.4rem 4.8rem rgba(0.075, 0.075, 0.075, 0.075);
   border-top: 2px solid rgb(24, 23, 23);
+  z-index: 100;
 }
 .cart-details::after{
   content: "";
