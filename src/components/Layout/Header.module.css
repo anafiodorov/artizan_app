@@ -5,7 +5,9 @@
   align-items: center;
   justify-items: center;
   gap: 1rem;
-  padding: 4rem 3rem 4rem 3rem ;
+  padding: 4rem 3rem 3rem 3rem;
+  /* position: fixed;
+  width: 100%; */
 }
 .main-nav-list {
   list-style: none;
@@ -77,6 +79,10 @@
 .serch-cart-totalAmount{
 align-self: center;
 display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: 1fr;
+}
+.link-search{
+  text-decoration: none;
+  color: black;
 }
 

@@ -12,7 +12,7 @@
 .cart {
   height: 2.5rem;
   margin-top: 0.5rem;
-  padding: 0rem;
+  position: relative;
 }
 .main-nav-cart-details {
   display: none;
@@ -29,8 +29,7 @@
   padding-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr;
-  margin-top: 0.2rem;
-  right: 3rem;
+  right: 2rem;
   width: 20rem;
   background-color: white;
   position: absolute;
@@ -39,11 +38,12 @@
   z-index: 100;
 }
 .cart-details::after{
+
   content: "";
   position: absolute;
   bottom: 100%;
-  right: 10%;
-  margin-left: -5px;
+  right: 44%;
+  margin: auto;
   border-width: 7px;
   border-style: solid;
   border-color: transparent transparent black transparent;
@@ -63,7 +63,7 @@
 }
 
 .button-viewcart {
-  /* display: inline-block; */
+ 
   min-width: 230px;
   height: 35px;
   margin: 0.5rem;
@@ -110,3 +110,7 @@
   border: 1px solid black;
 }
 
+.main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

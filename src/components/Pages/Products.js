@@ -1,29 +1,29 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import classes from './Products.module.css';
-import { useParams, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ProductItem from './ProductItem';
 import Header from '../Layout/Header';
 import Footer from '../Layout/Footer';
 import PriceSlider from '../UI/PriceSlider';
-import ColorPicker from '../UI/ColorPicker';
 import Size from '../UI/Size';
 import Arrow from '../UI/Arrow';
 import Composition from '../UI/Composition';
 import generalStyles from '../../styles/general.module.css';
-import { cartActions } from '../../store/cart';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { productsActions } from '../../store/products';
 
 const Products = () => {
+  const { search } = useLocation();
   const dispatch = useDispatch();
 
-  const { search } = useLocation();
+  const productList = useSelector((state) => state.products.products);
+
+  console.log(productList);
 
   const category = new URLSearchParams(search).get('category');
   const brand = new URLSearchParams(search).get('brand');
 
-  const [items, setItems] = useState([]);
   const [isCollapsedPrice, setIsCollapsedPrice] = useState(true);
-  const [isCollapsedColor, setIsCollapsedColor] = useState(true);
   const [isCollapsedSize, setIsCollapsedSize] = useState(true);
   const [isCollapsedComposition, setIsCollapsedComposition] = useState(true);
 
@@ -37,11 +37,11 @@ const Products = () => {
       } else if (brand) {
         url = url + `?brand=${brand}`;
       }
-      const items = await fetch(url);
-      const products = await items.json();
+      const products = await fetch(url);
+      const items = await products.json();
 
       if (isMounted) {
-        setItems(products);
+        dispatch(productsActions.addProducts(items));
       }
     };
 
@@ -54,26 +54,13 @@ const Products = () => {
   const collapsePriceHandler = () => {
     setIsCollapsedPrice(!isCollapsedPrice);
   };
-  const collapseColorHandler = () => {
-    setIsCollapsedColor(!isCollapsedColor);
-  };
   const collapseSizeHandler = () => {
     setIsCollapsedSize(!isCollapsedSize);
   };
   const collapseCompositionHandler = () => {
     setIsCollapsedComposition(!isCollapsedComposition);
   };
-  const cartItemAddHandler = (item) => {
-    dispatch(
-      cartActions.addToCart({
-        id: item.id,
-        name: item.name,
-        amount: 1,
-        price: item.price,
-      })
-    );
-    console.log(item);
-  };
+
   return (
     <Fragment>
       <Header />
@@ -88,11 +75,6 @@ const Products = () => {
             </div>
             {isCollapsedPrice && <PriceSlider />}
             <div className={classes.collapsible}>
-              <div>Culoare</div>
-              <Arrow onClick={collapseColorHandler} />
-            </div>
-            {isCollapsedColor && <ColorPicker />}
-            <div className={classes.collapsible}>
               <div>Marime</div>
               <Arrow onClick={collapseSizeHandler} />
             </div>
@@ -105,13 +87,8 @@ const Products = () => {
           </form>
         </aside>
         <div className={classes.products}>
-          {items.map((item) => (
-            <ProductItem
-              key={item.id}
-              name={item.name}
-              price={item.price}
-              onAdd={cartItemAddHandler.bind(null, item)}
-            />
+          {productList.map((item) => (
+            <ProductItem key={item.id} item={item} category={category} />
           ))}
         </div>
       </div>

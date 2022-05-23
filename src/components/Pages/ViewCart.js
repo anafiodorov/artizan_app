@@ -1,27 +1,71 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Footer from '../Layout/Footer';
 import Header from '../Layout/Header';
 import { useSelector } from 'react-redux';
 import CartProductItem from './CartProductItem';
 import classes from './ViewCart.module.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../store/cart';
 
 const ViewCart = () => {
+  const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const hasItems = cartItems.length > 0;
+  const removeItemHandler = (item) => {
+    dispatch(
+      cartActions.removeItem({
+        id: item.id,
+        name: item.name,
+        amount: 1,
+        price: item.price,
+      })
+    );
+  };
+  const addItemHandler = (item) => {
+    dispatch(
+      cartActions.addToCart({
+        id: item.id,
+        name: item.name,
+        amount: 1,
+        price: item.price,
+      })
+    );
+  };
   return (
     <div>
       <Header />
       <div className={classes.grid}>
         <div>
-          {cartItems.map((item) => (
-            <CartProductItem
-              key={item.id}
-              name={item.name}
-              amount={item.amount}
-            />
-          ))}
+          <div>
+            {cartItems.map((item) => (
+              <div className={classes['remove-item']}>
+                <div className={classes.remove}>
+                  <button
+                    onClick={removeItemHandler.bind(null, item)}
+                    className={`${classes.btn} ${classes['btn--up']}`}
+                  >
+                    <div>-</div>
+                  </button>
+                  <button
+                    onClick={addItemHandler.bind(null, item)}
+                    className={`${classes.btn}`}
+                  >
+                    <div>+</div>
+                  </button>
+                </div>
+
+                <div>
+                  <CartProductItem
+                    key={item.id}
+                    name={item.name}
+                    amount={item.amount}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div className={classes['cart-totals']}>
           <div className={classes['cart-totals-fixed']}>

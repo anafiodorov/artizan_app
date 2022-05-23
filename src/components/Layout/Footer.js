@@ -8,46 +8,46 @@ const Footer = () => {
         className={`${classes.container} ${classes.grid} ${classes['grid--footer']}`}
       >
         <div className={classes['address-col']}>
-          <p className={classes['footer-heading']}>Contacteaza-ne</p>
+          <div className={classes['footer-heading']}>Contacteaza-ne</div>
           <address className={classes['contacts']}>
-            <p className={classes['address']}>+40721749559</p>
-            <p>
-              <a
+            <div className={classes['address']}>+40721749559</div>
+            <div>
+              <div
                 className={classes['footer-link']}
                 href='mailto:hello@omnifood.com'
               >
                 hello@artizan.com
-              </a>
-            </p>
+              </div>
+            </div>
           </address>
         </div>
         <nav className={classes['nav-col']}>
-          <p className={classes['footer-heading']}>Cont</p>
+          <div className={classes['footer-heading']}>Cont</div>
           <ul className={classes['footer-nav']}>
             <li>
-              <a className={classes['footer-link']} href='#'>
+              <div className={classes['footer-link']} href='#'>
                 Creaza cont
-              </a>
+              </div>
             </li>
             <li>
-              <a className={classes['footer-link']} href='#'>
+              <div className={classes['footer-link']} href='#'>
                 Sign in
-              </a>
+              </div>
             </li>
           </ul>
         </nav>
         <nav className={classes['nav-col']}>
-          <p className={classes['footer-heading']}>Companie</p>
+          <div className={classes['footer-heading']}>Companie</div>
           <ul className={classes['footer-nav']}>
             <li>
-              <a className={classes['footer-link']} href='#'>
+              <div className={classes['footer-link']} href='#'>
                 Despre Artizan
-              </a>
+              </div>
             </li>
             <li>
-              <a className={classes['footer-link']} href='#'>
+              <div className={classes['footer-link']} href='#'>
                 Pentru Colaborari
-              </a>
+              </div>
             </li>
           </ul>
         </nav>

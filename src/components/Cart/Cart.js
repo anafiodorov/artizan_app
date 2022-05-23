@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
@@ -9,21 +9,9 @@ const Cart = () => {
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const itemsCount = useSelector((state) => state.cart.itemsCount);
   const hasItems = cartItems.length > 0;
-  const cartItemsNumber = 0;
 
-  // Another way of counting items
-  // const itemCountV2 = cartItems
-  //   .map((el) => {
-  //     return el.amount;
-  //   })
-  //   .reduce(
-  //     (previousValue, currentValue) => previousValue + currentValue,
-  //     cartItemsNumber
-  //   );
-
-  console.log(cartItemsNumber);
   return (
-    <Fragment>
+    <div className={classes.main}>
       <div>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -72,7 +60,7 @@ const Cart = () => {
         </div>
       </div>
       <div className={classes.circle}>{itemsCount}</div>
-    </Fragment>
+    </div>
   );
 };
 

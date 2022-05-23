@@ -1,6 +1,6 @@
 .gallery {
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 2fr 7fr;
   gap: 6rem;
   padding: 2rem;
   /* height: 180vh; */
@@ -15,6 +15,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 2rem;
+  margin-top: 2rem;
   margin-left: 2rem;
   font-size: 1.2rem;
 }

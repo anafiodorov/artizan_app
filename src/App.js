@@ -7,6 +7,7 @@ import Login from '../src/components/Pages/Login';
 import Products from './components/Pages/Products';
 import ViewCart from './components/Pages/ViewCart';
 import Checkout from './components/Pages/Checkout';
+import ProductItemDetails from './components/Pages/ProductItemDetails';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/signUp' element={<SignUp />} />
       <Route path='/login' element={<Login />} />
       <Route path='/products' element={<Products />} />
+      <Route path='/product-item-details' element={<ProductItemDetails />} />
       <Route path='/view-cart' element={<ViewCart />} />
       <Route path='/checkout' element={<Checkout />} />
     </Routes>

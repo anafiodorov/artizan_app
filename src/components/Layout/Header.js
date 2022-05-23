@@ -7,7 +7,6 @@ import { categoriesActions } from '../../store/categories';
 import { brandsActions } from '../../store/brands';
 import Cart from '../Cart/Cart';
 import generalStyles from '../../styles/general.module.css';
-import Search from '../Cart/Search';
 
 const Header = (props) => {
   const dispatch = useDispatch();
@@ -93,8 +92,9 @@ const Header = (props) => {
           </ul>
         </nav>
         <div className={classes['serch-cart-totalAmount']}>
-          <Search />
-          <Cart />
+          <Link className={classes['link-search']} to='/view-cart'>
+            <Cart />
+          </Link>
         </div>
       </div>
     </Fragment>

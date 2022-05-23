@@ -1,9 +1,9 @@
 .grid {
+  width: 20rem;
   margin-top: 8rem;
   margin-bottom: 5rem;
-  margin-left: 15rem;
-  margin-right: 18rem;
-  gap: 3rem;
+  margin-left: 25%;
+  gap: 10rem;
   display: grid;
   grid-template-columns: 6fr 2fr;
 }

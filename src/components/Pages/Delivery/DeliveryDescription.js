@@ -14,7 +14,7 @@ const DeliveryDescription = () => {
           La o comandă sub 800 RON, taxa de livrare prin Bucuresti este de 50
           RON. Tarife în restul localităților din Romania: la o comandă de peste
           1000 RON, livrarea este GRATUITĂ. la o comandă sub 1000 RON, taxa de
-          livrare este de 90 MDL. Durata livrare: până la 3 zile lucrătoare.
+          livrare este de 90 RON. Durata livrare: până la 3 zile lucrătoare.
         </p>
       </div>
     </div>
