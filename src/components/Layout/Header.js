@@ -16,12 +16,16 @@ const Header = (props) => {
   useEffect(() => {
     let isMounted = true;
     const fetchData = async () => {
-      const fetchedCategories = await fetch('http://localhost:3001/categories');
+      const fetchedCategories = await fetch(
+        `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/categories`
+      );
       const categories = await fetchedCategories.json();
 
       console.log(categories);
 
-      const fetchedBrands = await fetch('http://localhost:3001/brands');
+      const fetchedBrands = await fetch(
+        `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/brands`
+      );
       const brands = await fetchedBrands.json();
 
       console.log(brands);

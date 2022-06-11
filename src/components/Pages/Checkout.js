@@ -95,13 +95,16 @@ const Checkout = () => {
     };
 
     const submitOrderHandler = async (orders) => {
-      let responseUserData = await fetch('http://localhost:3001/orders', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orders),
-      }).then((response) => {
+      let responseUserData = await fetch(
+        `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/orders`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(orders),
+        }
+      ).then((response) => {
         if (response.status >= 200 && response.status <= 299) {
           return response.json();
         } else {

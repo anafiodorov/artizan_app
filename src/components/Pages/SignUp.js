@@ -55,13 +55,16 @@ const SignUp = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     console.log(JSON.stringify(userInput));
-    fetch('http://localhost:3001/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userInput),
-    })
+    fetch(
+      `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/signup`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userInput),
+      }
+    )
       .then((response) => {
         return response.text();
       })

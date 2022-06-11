@@ -35,7 +35,7 @@ const ProductItemDetails = () => {
   useEffect(() => {
     console.log('Effect');
     const fetchData = async () => {
-      let url = 'http://localhost:3001/products';
+      let url = `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/products`;
       const items = await fetch(url);
       const products = await items.json();
       dispatch(productsActions.addProducts(products));

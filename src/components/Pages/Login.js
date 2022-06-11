@@ -26,11 +26,14 @@ const Login = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
     console.log('UserData' + JSON.stringify(userInput));
-    let responseUserData = await fetch('http://localhost:3001/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(userInput),
-    });
+    let responseUserData = await fetch(
+      `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/login`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userInput),
+      }
+    );
     let userLoginData = await responseUserData.json();
     console.log('LoginData ' + userLoginData['accessToken']);
     const { accessToken } = userLoginData;

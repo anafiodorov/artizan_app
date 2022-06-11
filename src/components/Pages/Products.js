@@ -30,7 +30,7 @@ const Products = () => {
   useEffect(() => {
     let isMounted = true;
     const fetchData = async () => {
-      let url = 'http://localhost:3001/products';
+      let url = `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/products`;
 
       if (category) {
         url = url + `?category=${category}`;
