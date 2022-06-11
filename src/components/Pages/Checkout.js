@@ -96,7 +96,7 @@ const Checkout = () => {
 
     const submitOrderHandler = async (orders) => {
       let responseUserData = await fetch(
-        `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/orders`,
+        `${process.env.REACT_APP_SERVER_URL}/orders`,
         {
           method: 'POST',
           headers: {

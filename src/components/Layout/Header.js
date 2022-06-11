@@ -17,14 +17,14 @@ const Header = (props) => {
     let isMounted = true;
     const fetchData = async () => {
       const fetchedCategories = await fetch(
-        `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/categories`
+        `${process.env.REACT_APP_SERVER_URL}/categories`
       );
       const categories = await fetchedCategories.json();
 
       console.log(categories);
 
       const fetchedBrands = await fetch(
-        `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/brands`
+        `${process.env.REACT_APP_SERVER_URL}/brands`
       );
       const brands = await fetchedBrands.json();
 

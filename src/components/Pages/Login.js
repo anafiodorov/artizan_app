@@ -27,7 +27,7 @@ const Login = () => {
     event.preventDefault();
     console.log('UserData' + JSON.stringify(userInput));
     let responseUserData = await fetch(
-      `http://${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/login`,
+      `${process.env.REACT_APP_SERVER_URL}/login`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
