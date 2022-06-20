@@ -4,6 +4,8 @@ import brandsReducer from './brands';
 import authReducer from './auth';
 import cartReducer from './cart';
 import productsReducer from './products';
+import priceReducer from './priceSlider';
+import sizeReducer from './size';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +14,8 @@ const store = configureStore({
     brands: brandsReducer,
     cart: cartReducer,
     products: productsReducer,
+    price: priceReducer,
+    size: sizeReducer,
   },
 });
 

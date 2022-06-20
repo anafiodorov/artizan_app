@@ -1,29 +1,19 @@
 import classes from './Size.module.css';
 import React, { Fragment, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { sizeActions } from '../../store/size';
 
 const Size = () => {
-  const [isChecked, setChecked] = useState({
-    S32: false,
-    S34: false,
-    S36: false,
-    S38: false,
-    S40: false,
-    S42: false,
-    XS: false,
-    S: false,
-    M: false,
-    L: false,
-    XL: false,
-    XXL: false,
-  });
-
-  console.log(isChecked);
+  const dispatch = useDispatch();
+  const sizesFilter = useSelector((state) => state.size.size);
 
   const handleChange = (evt) => {
-    setChecked({
-      ...isChecked,
-      [evt.target.name]: evt.target.checked,
-    });
+    dispatch(
+      sizeActions.addSize({
+        name: evt.target.name,
+        value: evt.target.checked,
+      })
+    );
   };
   return (
     <Fragment>
@@ -31,7 +21,7 @@ const Size = () => {
         <input
           name='S32'
           type='checkbox'
-          checked={isChecked.S32}
+          checked={sizesFilter.S32}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>32</label>
@@ -40,7 +30,7 @@ const Size = () => {
         <input
           name='S34'
           type='checkbox'
-          checked={isChecked.S34}
+          checked={sizesFilter.S34}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>34</label>
@@ -49,7 +39,7 @@ const Size = () => {
         <input
           name='S36'
           type='checkbox'
-          checked={isChecked.S36}
+          checked={sizesFilter.S36}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>36</label>
@@ -58,7 +48,7 @@ const Size = () => {
         <input
           name='S38'
           type='checkbox'
-          checked={isChecked.S38}
+          checked={sizesFilter.S38}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>38</label>
@@ -67,7 +57,7 @@ const Size = () => {
         <input
           name='S40'
           type='checkbox'
-          checked={isChecked.S40}
+          checked={sizesFilter.S40}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>40</label>
@@ -76,7 +66,7 @@ const Size = () => {
         <input
           name='S42'
           type='checkbox'
-          checked={isChecked.S42}
+          checked={sizesFilter.S42}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>42</label>
@@ -85,7 +75,7 @@ const Size = () => {
         <input
           name='XS'
           type='checkbox'
-          checked={isChecked.XS}
+          checked={sizesFilter.XS}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>XS</label>
@@ -94,7 +84,7 @@ const Size = () => {
         <input
           name='S'
           type='checkbox'
-          checked={isChecked.S}
+          checked={sizesFilter.S}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>S</label>
@@ -103,7 +93,7 @@ const Size = () => {
         <input
           name='M'
           type='checkbox'
-          checked={isChecked.M}
+          checked={sizesFilter.M}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>M</label>
@@ -112,7 +102,7 @@ const Size = () => {
         <input
           name='L'
           type='checkbox'
-          checked={isChecked.L}
+          checked={sizesFilter.L}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>L</label>
@@ -121,7 +111,7 @@ const Size = () => {
         <input
           name='XL'
           type='checkbox'
-          checked={isChecked.XL}
+          checked={sizesFilter.XL}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>XL</label>
@@ -130,7 +120,7 @@ const Size = () => {
         <input
           name='XXL'
           type='checkbox'
-          checked={isChecked.XXL}
+          checked={sizesFilter.XXL}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>XXL</label>

@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './PriceSlider.module.css';
 import Slider from '@material-ui/core/Slider';
+import { useDispatch } from 'react-redux';
+import { priceActions } from '../../store/priceSlider';
 
 const PriceSlider = () => {
-  const [sliderValue, setSliderValue] = useState('');
+  const dispatch = useDispatch();
 
   const valuetext = (value) => {
-    return setSliderValue(value);
+    dispatch(priceActions.addPrice(value));
+    console.log(value);
   };
 
   return (
     <div className={classes['slider-div']}>
       <Slider
-        defaultValue={0}
+        defaultValue={1000}
         getAriaValueText={valuetext}
         aria-labelledby='discrete-slider-always'
         step={10}

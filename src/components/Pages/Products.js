@@ -17,8 +17,11 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.products.products);
+  const price = useSelector((state) => state.price.price);
+  const sizesFilter = useSelector((state) => state.size.size);
 
   console.log(productList);
+  console.log(sizesFilter);
 
   const category = new URLSearchParams(search).get('category');
   const brand = new URLSearchParams(search).get('brand');
@@ -61,6 +64,23 @@ const Products = () => {
     setIsCollapsedComposition(!isCollapsedComposition);
   };
 
+  const filteredList = (
+    Object.values(sizesFilter).every((el) => el === false)
+      ? productList
+      : productList.filter((item) => {
+          const sizeCheck = (el) => {
+            console.log(sizesFilter);
+            console.log(el);
+            return sizesFilter['S' + el] === true;
+          };
+          return item.sizes.some(sizeCheck);
+        })
+  )
+    .filter((item) => item.price <= price)
+    .map((item) => (
+      <ProductItem key={item.id} item={item} category={category} />
+    ));
+
   return (
     <Fragment>
       <Header />
@@ -79,18 +99,14 @@ const Products = () => {
               <Arrow onClick={collapseSizeHandler} />
             </div>
             {isCollapsedSize && <Size />}
-            <div className={classes.collapsible}>
+            {/* <div className={classes.collapsible}>
               <div>Compozitie</div>
               <Arrow onClick={collapseCompositionHandler} />
             </div>
-            {isCollapsedComposition && <Composition />}
+            {isCollapsedComposition && <Composition />} */}
           </form>
         </aside>
-        <div className={classes.products}>
-          {productList.map((item) => (
-            <ProductItem key={item.id} item={item} category={category} />
-          ))}
-        </div>
+        <div className={classes.products}>{filteredList}</div>
       </div>
       <Footer />
     </Fragment>
