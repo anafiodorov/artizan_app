@@ -8,6 +8,7 @@ import Products from './components/Pages/Products';
 import ViewCart from './components/Pages/ViewCart';
 import Checkout from './components/Pages/Checkout';
 import ProductItemDetails from './components/Pages/ProductItemDetails';
+import Test from './components/UI/Test';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path='/product-item-details' element={<ProductItemDetails />} />
       <Route path='/view-cart' element={<ViewCart />} />
       <Route path='/checkout' element={<Checkout />} />
+      <Route path='/test' element={<Test />} />
     </Routes>
   );
 }

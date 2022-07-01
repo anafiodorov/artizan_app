@@ -34,7 +34,8 @@ const Products = () => {
     let isMounted = true;
     const fetchData = async () => {
       let url = `${process.env.REACT_APP_SERVER_URL}/products`;
-
+      console.log('Log: ' + `${process.env.REACT_APP_TEST}`);
+      console.log(url);
       if (category) {
         url = url + `?category=${category}`;
       } else if (brand) {
