@@ -34,7 +34,12 @@ const Cart = () => {
             >{`Subtotal: ${cartTotalAmount} RON`}</div>
             <div>
               {cartItems.map((item) => (
-                <CartItem key={item.id} name={item.name} amount={item.amount} />
+                <CartItem
+                  key={item.id}
+                  name={item.name}
+                  amount={item.amount}
+                  image={item.urlProduct}
+                />
               ))}
             </div>
             {hasItems && (

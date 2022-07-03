@@ -52,7 +52,7 @@ const Header = (props) => {
           <ul className={classes['main-nav-list']}>
             <li>
               <Link className={classes['main-nav-link']} to='/'>
-                Acasa
+                Acasă
               </Link>
             </li>
             <li>
@@ -90,7 +90,7 @@ const Header = (props) => {
             </li>
             <li>
               <Link className={classes['main-nav-link']} to='/delivery'>
-                Livrari
+                Livrări
               </Link>
             </li>
           </ul>

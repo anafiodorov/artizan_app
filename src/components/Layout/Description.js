@@ -11,7 +11,7 @@ const Description = () => {
       <div className={classes['description']}>
         <div className={classes['description-text-box']}>
           <h1 className={classes['heading-primary']}>
-            Atrizan, un loc unde se aduna creatorii de produse locale unice si
+            Atrizan, un loc unde se adună creatorii de produse locale unice și
             autentice.
           </h1>
           <br />
@@ -21,7 +21,7 @@ const Description = () => {
             calităţii şi a modelelor de producţie responsabile şi sustenabile.
             Dezvoltarea consumului local poate genera un impact pozitiv în
             comunitate, prin crearea locurilor noi de munca, protejarea mediului
-            înconjurător, prin pastrarea valorii in interiorul comunitatii.
+            înconjurător și prin păstrarea valorii în interiorul comunității.
           </p>
         </div>
         <div>

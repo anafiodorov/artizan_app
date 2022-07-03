@@ -61,6 +61,7 @@ const ViewCart = () => {
                     key={item.id}
                     name={item.name}
                     amount={item.amount}
+                    image={item.urlProduct}
                   />
                 </div>
               </div>

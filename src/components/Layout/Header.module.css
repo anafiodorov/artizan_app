@@ -32,7 +32,7 @@
 }
 .main-nav-link:hover,
 .main-nav-link:active {
-  border-bottom: 2px solid rgb(24, 23, 23);
+  border-bottom: 2px solid rgb(186, 12, 12);
   transition: outline 0.6s linear;
 }
 .main-nav-link.nav-cta:link,

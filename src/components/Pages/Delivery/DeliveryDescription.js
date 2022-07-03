@@ -10,11 +10,11 @@ const DeliveryDescription = () => {
         </h1>
         <br />
         <p className={classes['main-description']}>
-          La o comandă de peste 800 RON livrarea prin Bucuresti este GRATUITĂ.
-          La o comandă sub 800 RON, taxa de livrare prin Bucuresti este de 50
-          RON. Tarife în restul localităților din Romania: la o comandă de peste
-          1000 RON, livrarea este GRATUITĂ. la o comandă sub 1000 RON, taxa de
-          livrare este de 90 RON. Durata livrare: până la 3 zile lucrătoare.
+          La o comandă de peste 300 RON livrarea prin București este GRATUITĂ.
+          La o comandă sub 300 RON, taxa de livrare prin București este de 20
+          RON. Tarifele în restul localităților din România: la o comandă de
+          peste 500 RON, livrarea este GRATUITĂ. la o comandă sub 500 RON, taxa
+          de livrare este de 30 RON. Durata livrare: până la 3 zile lucrătoare.
         </p>
       </div>
     </div>

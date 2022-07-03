@@ -11,8 +11,11 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cart';
 import { productsActions } from '../../store/products';
+import { ref, getDownloadURL } from 'firebase/storage';
+import storage from '../../firebaseConfig';
 
 const ProductItemDetails = () => {
+  const [urlProduct, setUrlProduct] = useState('');
   const dispatch = useDispatch();
   const [size, setSize] = useState('');
   const [sizeIsClicked, setSizeIsClicked] = useState({
@@ -27,10 +30,36 @@ const ProductItemDetails = () => {
   const { search } = useLocation();
 
   const productId = new URLSearchParams(search).get('productId');
-
+  const productUrlRef = ref(storage, productId + '.jpeg');
   const products = useSelector((state) => state.products.products);
 
   console.log(products);
+
+  const getPicturesFirebase = (pictureRef, setUrl) => {
+    getDownloadURL(pictureRef)
+      .then((url) => {
+        setUrl(url);
+      })
+      .catch((error) => {
+        // A full list of error codes is available at
+        // https://firebase.google.com/docs/storage/web/handle-errors
+        switch (error.code) {
+          case 'storage/object-not-found':
+            // File doesn't exist
+            break;
+          case 'storage/unauthorized':
+            // User doesn't have permission to access the object
+            break;
+          case 'storage/canceled':
+            // User canceled the upload
+            break;
+          // ...
+          case 'storage/unknown':
+            // Unknown error occurred, inspect the server response
+            break;
+        }
+      });
+  };
 
   useEffect(() => {
     console.log('Effect');
@@ -45,6 +74,7 @@ const ProductItemDetails = () => {
 
       fetchData();
     }
+    getPicturesFirebase(productUrlRef, setUrlProduct);
   }, []);
 
   console.log(products);
@@ -69,6 +99,7 @@ const ProductItemDetails = () => {
         amount: 1,
         price: item.price,
         size: size,
+        urlProduct: urlProduct,
       })
     );
   };

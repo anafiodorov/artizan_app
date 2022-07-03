@@ -13,6 +13,7 @@
   height: 2.5rem;
   margin-top: 0.5rem;
   position: relative;
+
 }
 .main-nav-cart-details {
   display: none;
@@ -37,7 +38,7 @@
   border-top: 2px solid rgb(24, 23, 23);
   z-index: 100;
 }
-.cart-details::after{
+/* .cart-details::after{
 
   content: "";
   position: absolute;
@@ -47,7 +48,7 @@
   border-width: 7px;
   border-style: solid;
   border-color: transparent transparent black transparent;
-}
+} */
 .checkout {
   align-self: center;
   justify-self: center;

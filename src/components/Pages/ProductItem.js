@@ -50,6 +50,7 @@ const ProductItem = (props) => {
         name: item.name,
         amount: 1,
         price: item.price,
+        urlProduct: urlProduct,
       })
     );
     console.log(item);
@@ -62,7 +63,7 @@ const ProductItem = (props) => {
           to={`/product-item-details?productId=${props.item.id}`}
         >
           <figure className={classes['gallery-item']}>
-            <img src={dress} alt='Photo of beautifully arranged food' />
+            <img src={urlProduct} alt='Photo of beautifully arranged food' />
             <div className={classes['gallery-title']}>{props.item.name}</div>
             <div className={classes['gallery-price']}>
               {props.item.price + ' RON'}

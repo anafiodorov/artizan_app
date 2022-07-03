@@ -6,7 +6,11 @@ const CartItem = (props) => {
   return (
     <div>
       <div className={classes['img-title']}>
-        <img src={img} alt='Item image' className={classes['item-img']} />
+        <img
+          src={props.image}
+          alt='Item image'
+          className={classes['item-img']}
+        />
         <div>{`${props.name} - ${props.amount} items`}</div>
       </div>
     </div>
