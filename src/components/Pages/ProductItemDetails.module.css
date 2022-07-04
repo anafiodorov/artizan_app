@@ -72,3 +72,10 @@ margin-left: 1rem;
 .size-checked{
   border: 3px solid black;
 }
+.noitems{
+  color: #ca3e51;
+  margin-top: 2rem;
+  font-family: 'Marck Script', cursive;
+  font-size: 1.2rem;
+  font-weight: 600;
+}

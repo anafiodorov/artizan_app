@@ -10,3 +10,49 @@
   grid-template-columns: 1fr 3fr;
   border-bottom: 1px solid rgb(224, 219, 219);
 }
+.product-item{
+  display: grid;
+  grid-template-columns: 0.1fr 10fr;
+  gap: 2rem;
+}
+.remove{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  color: grey;
+  align-self: center;
+  width: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 4rem;
+}
+
+.btn{
+  position: absolute;
+  background-color: #fff;
+  color: black;
+  border: none;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.btn--up {
+  transform: translate(0, -120%);
+}
+.button{
+  width: 12rem;
+  margin: 5rem;
+  align-self: flex-end;
+}
+
+.button:hover{
+  color: black;
+}

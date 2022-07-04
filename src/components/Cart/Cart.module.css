@@ -83,7 +83,7 @@
 
 .button-viewcart:hover {
   background-color: white; 
-  color: rgb(222, 19, 19);
+  color: black;
   border: 1px solid black;
 }
 .button-checkout {
@@ -107,7 +107,7 @@
 
 .button-checkout:hover {
   background-color: white; 
-  color: rgb(222, 19, 19);
+  color: black;
   border: 1px solid black;
 }
 

@@ -10,7 +10,9 @@ const CartProductItem = (props) => {
           alt='Item image'
           className={classes['item-img']}
         />
-        <div>{`${props.name} - ${props.amount} items`}</div>
+        <div>
+          <div>{`${props.name} - ${props.amount} items`}</div>
+        </div>
       </div>
     </div>
   );

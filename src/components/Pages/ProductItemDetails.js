@@ -16,6 +16,7 @@ import storage from '../../firebaseConfig';
 
 const ProductItemDetails = () => {
   const [urlProduct, setUrlProduct] = useState('');
+  const [messageNoSize, setMessageNoSize] = useState(false);
   const dispatch = useDispatch();
   const [size, setSize] = useState('');
   const [sizeIsClicked, setSizeIsClicked] = useState({
@@ -225,7 +226,10 @@ const ProductItemDetails = () => {
               40
             </li> */}
           </ul>
+
           <button
+            onMouseEnter={() => setMessageNoSize(true)}
+            onMouseLeave={() => setMessageNoSize(false)}
             onClick={onClick}
             className={
               size === ''
@@ -235,6 +239,11 @@ const ProductItemDetails = () => {
           >
             Add To Cart
           </button>
+          {messageNoSize && size === '' && (
+            <p className={classes.noitems}>
+              Please choose a size before adding the item to cart!
+            </p>
+          )}
         </div>
       </div>
       <Footer />

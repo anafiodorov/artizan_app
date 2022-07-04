@@ -54,7 +54,7 @@
   margin-bottom: 4rem;
 }
 
-.remove-item{
+.product-item{
   display: grid;
   grid-template-columns: 0.1fr 10fr;
   gap: 2rem;
@@ -79,6 +79,6 @@
 .btn--up {
   transform: translate(0, -120%);
 }
-.btn:hover{
-   color: brown; 
+.button:hover{
+  color: black;
 }
