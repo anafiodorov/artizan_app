@@ -52,7 +52,7 @@ const cartSlice = createSlice({
       let updatedItems;
       if (existingItem.amount === 1) {
         updatedItems = state.cartItems.filter(
-          (item) => item.cartId == action.payload.cartId
+          (item) => item.cartId !== action.payload.cartId
         );
       } else {
         const updatedItem = {
