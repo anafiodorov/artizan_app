@@ -103,6 +103,16 @@ const ProductItemDetails = () => {
         urlProduct: urlProduct,
       })
     );
+    setSizeIsClicked({
+      34: false,
+      36: false,
+      38: false,
+      40: false,
+    });
+
+    setTimeout(() => {
+      setSize('');
+    }, 3000);
   };
 
   console.log(size);
@@ -239,11 +249,16 @@ const ProductItemDetails = () => {
           >
             Add To Cart
           </button>
-          {messageNoSize && size === '' && (
-            <p className={classes.noitems}>
-              Please choose a size before adding the item to cart!
-            </p>
-          )}
+          {messageNoSize &&
+            size === '' &&
+            sizeIsClicked[34] === false &&
+            sizeIsClicked[36] === false &&
+            sizeIsClicked[38] === false &&
+            sizeIsClicked[40] === false && (
+              <p className={classes.noitems}>
+                Alege, te rog, marimea inainte sa adaugi produsul in cos!
+              </p>
+            )}
         </div>
       </div>
       <Footer />

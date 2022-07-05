@@ -39,6 +39,7 @@ const Cart = () => {
                   name={item.name}
                   amount={item.amount}
                   image={item.urlProduct}
+                  size={item.size}
                 />
               ))}
             </div>

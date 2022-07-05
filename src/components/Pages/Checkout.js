@@ -119,6 +119,17 @@ const Checkout = () => {
     } else {
       submitOrderHandler(orders);
     }
+
+    setOrder({
+      firstName: '',
+      lastName: '',
+      country: '',
+      street: '',
+      postalCode: '',
+      city: '',
+      phone: '',
+      email: '',
+    });
   };
 
   return (
@@ -552,7 +563,7 @@ const Checkout = () => {
             <div>{`Total : ${cartTotalAmount} RON`}</div>
           </div>
           {!hasItems && (
-            <p className={classes.noitems}>You have no items in your cart!</p>
+            <p className={classes.noitems}>Nu ai niciun produs in cos!</p>
           )}
           <div className={`${classes.button} ${classes.actions}`}>
             <Link to='/checkout'>

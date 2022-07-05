@@ -20,6 +20,8 @@ const ViewCart = () => {
         name: item.name,
         amount: 1,
         price: item.price,
+        urlProduct: item.urlProduct,
+        size: item.size,
       })
     );
   };
@@ -29,7 +31,9 @@ const ViewCart = () => {
         id: item.id,
         name: item.name,
         amount: 1,
+        urlProduct: item.urlProduct,
         price: item.price,
+        size: item.size,
       })
     );
   };
@@ -62,6 +66,7 @@ const ViewCart = () => {
                     name={item.name}
                     amount={item.amount}
                     image={item.urlProduct}
+                    size={item.size}
                   />
                 </div>
               </div>
