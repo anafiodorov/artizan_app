@@ -153,7 +153,9 @@ const Checkout = () => {
       <Header />
       {showConfirmationOrderModal && (
         <Modal onClose={hideConfirmationHandler}>
-          {error.length !== 0 ? error : 'Your order is processed'}
+          {error.length !== 0
+            ? error
+            : 'Comanda ta este înregistrată cu succes'}
         </Modal>
       )}
       <form className={classes.grid} onSubmit={submitHandler}>
