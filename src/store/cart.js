@@ -66,6 +66,11 @@ const cartSlice = createSlice({
       state.totalAmount = updatedTotalAmount;
       state.itemsCount = state.itemsCount - action.payload.amount;
     },
+    emptyCart(state) {
+      state.cartItems = [];
+      state.totalAmount = 0;
+      state.itemsCount = 0;
+    },
   },
 });
 

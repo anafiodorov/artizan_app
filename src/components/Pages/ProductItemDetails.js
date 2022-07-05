@@ -103,16 +103,16 @@ const ProductItemDetails = () => {
         urlProduct: urlProduct,
       })
     );
-    setSizeIsClicked({
-      34: false,
-      36: false,
-      38: false,
-      40: false,
-    });
+    // setSizeIsClicked({
+    //   34: false,
+    //   36: false,
+    //   38: false,
+    //   40: false,
+    // });
 
-    setTimeout(() => {
-      setSize('');
-    }, 3000);
+    // setTimeout(() => {
+    //   setSize('');
+    // }, 3000);
   };
 
   console.log(size);

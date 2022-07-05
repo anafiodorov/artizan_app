@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import Header from '../Layout/Header';
 import classes from './Checkout.module.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Footer from '../Layout/Footer';
+import Modal from '../UI/Modal';
+import { cartActions } from '../../store/cart';
 
 const isEmpty = (value) => value.trim() === '';
 const isFiveChars = (value) => value.trim().length > 10;
 const verifyEmail = (value) => value.includes('@');
 
 const Checkout = () => {
+  const dispatch = useDispatch();
+  const [showConfirmationOrderModal, setShowConfirmationOrderModal] =
+    useState(false);
   const cartItems = useSelector((state) => state.cart.cartItems);
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const hasItems = cartItems.length > 0;
@@ -17,7 +22,7 @@ const Checkout = () => {
   console.log('Items in cart');
 
   console.log(cartItems);
-
+  const [error, setError] = useState('');
   const [order, setOrder] = useState({
     firstName: '',
     lastName: '',
@@ -46,6 +51,15 @@ const Checkout = () => {
       [evt.target.name]: evt.target.value,
     });
   };
+
+  const showConfirmationHandler = () => {
+    setShowConfirmationOrderModal(true);
+  };
+
+  const hideConfirmationHandler = () => {
+    setShowConfirmationOrderModal(false);
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredFirstNameIsValid = !isEmpty(order.firstName);
@@ -108,7 +122,7 @@ const Checkout = () => {
         if (response.status >= 200 && response.status <= 299) {
           return response.json();
         } else {
-          console.log('Error');
+          setError('Error');
         }
       });
 
@@ -118,12 +132,14 @@ const Checkout = () => {
       return console.log('Formularul nu este valid');
     } else {
       submitOrderHandler(orders);
+      showConfirmationHandler();
+      dispatch(cartActions.emptyCart());
     }
 
     setOrder({
       firstName: '',
       lastName: '',
-      country: '',
+      country: 'Romania',
       street: '',
       postalCode: '',
       city: '',
@@ -135,6 +151,11 @@ const Checkout = () => {
   return (
     <div>
       <Header />
+      {showConfirmationOrderModal && (
+        <Modal onClose={hideConfirmationHandler}>
+          {error.length !== 0 ? error : 'Your order is processed'}
+        </Modal>
+      )}
       <form className={classes.grid} onSubmit={submitHandler}>
         <div className={classes.main}>
           <h3>BILLING DETAILS</h3>
