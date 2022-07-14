@@ -45,7 +45,7 @@ const Footer = () => {
               />
             </svg>
           </div>
-          <div>
+          <div className={classes['email-div']}>
             <a
               className={classes['footer-link']}
               href='mailto:ana.fiodorov93@gmail.com'
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
         <p className={classes.copyright}>
-          Copyright by Artizan &copy; {year} , Inc. All rights reverved.
+          Copyright &copy; {year} Artizan. All rights reverved.
         </p>
       </div>
     </footer>
