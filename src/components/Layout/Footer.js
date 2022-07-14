@@ -11,7 +11,7 @@ const Footer = () => {
         className={`${classes.container} ${classes.grid} ${classes['grid--footer']}`}
       >
         <div className={classes['address-col']}>
-          <div>Contactează-ne</div>
+          <div className={classes.contact}>Contactează-ne</div>
           <div className={classes.phone}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -28,7 +28,7 @@ const Footer = () => {
               />
             </svg>
           </div>
-          <div>+40721749559</div>
+          <div className={classes['phone-nr']}>+40721749559</div>
           <div className={classes.email}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
         <p className={classes.copyright}>
-          Copyright &copy; {year} by Artizan, Inc. All rights reverved.
+          Copyright by Artizan &copy; {year} , Inc. All rights reverved.
         </p>
       </div>
     </footer>

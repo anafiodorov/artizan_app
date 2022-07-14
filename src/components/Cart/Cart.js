@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
@@ -9,13 +9,28 @@ const Cart = () => {
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const itemsCount = useSelector((state) => state.cart.itemsCount);
   const hasItems = cartItems.length > 0;
+  const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
+  // useEffect(() => {
+  //   if (cartItems.length === 0) {
+  //     return;
+  //   }
+  //   setBtnIsHighlighted(true);
+  //   const timer = setTimeout(() => {
+  //     setBtnIsHighlighted(false);
+  //   }, 300);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [cartItems.length]);
+
+  const cartClasses = `${classes.cart} ${btnIsHighlighted ? classes.bump : ''}`;
 
   return (
     <div className={classes.main}>
       <div>
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          className={classes.cart}
+          className={cartClasses}
           fill='none'
           viewBox='0 0 24 24'
           stroke='currentColor'
