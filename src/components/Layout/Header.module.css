@@ -96,10 +96,10 @@ grid-template-columns: 1fr;
     gap: 4rem;
   }
   .main-nav-link:link{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 .main-nav-list{
-  gap: 2rem;
+  gap: 1.6rem;
 }
 .main-nav{
   grid-column: 1/3;
