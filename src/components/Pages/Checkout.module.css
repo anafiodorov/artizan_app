@@ -57,7 +57,6 @@ abbr {
 .main {
   display: grid;
   gap: 2rem;
-
 }
 input[type='text'] {
   background: transparent;
@@ -74,9 +73,9 @@ input[type='text'] {
   border: 1px solid rgb(24, 23, 23);
 }
 input:-webkit-autofill,
-  input:-webkit-autofill:focus {
-    transition: background-color 600000s 0s, color 600000s 0s;
-  }
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
 input:focus {
   outline: none;
 }
@@ -110,13 +109,31 @@ select {
 .actions .submit:active {
   background-color: #7a2706;
 }
-.comment{
+.comment {
   color: #ca3e51;
 }
-.noitems{
+.noitems {
   color: #ca3e51;
   margin-top: 10rem;
   font-family: 'Marck Script', cursive;
   font-size: 1.2rem;
   font-weight: 600;
+}
+
+/* MOBILE FORMAT */
+/* IPHONE SE */
+@media (max-width: 24em) {
+  .grid {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 10%;
+  }
+  .cart-totals{
+height: 35rem;
+width: 21rem;
+  }
+  .button{
+margin-right: 8rem;
+  }
 }

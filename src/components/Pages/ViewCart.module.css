@@ -82,3 +82,21 @@
 .button:hover{
   color: black;
 }
+
+/* MOBILE FORMAT */
+/* IPHONE SE */
+@media (max-width: 24em) {
+  .grid{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-template-columns: 1fr;
+  }
+ .cart-totals{
+  width: 22rem;
+ }
+ .button{
+  margin-left: 3.5rem;
+ }
+}

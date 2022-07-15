@@ -12,3 +12,18 @@
 .delivery-heading-primary {
   margin-top: 10rem;
 }
+/* MOBILE FORMAT */
+/* IPHONE SE */
+
+@media (max-width: 24em) {
+  .delivery-heading-primary {
+    margin-top: 1rem;
+  }
+  .delivery-description-text-box{
+    margin: 1rem auto;
+    width: 20rem;
+  }
+  .delivery-description {
+    height: 30rem;
+  }
+}

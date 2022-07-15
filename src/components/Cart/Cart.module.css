@@ -136,3 +136,11 @@
     transform: scale(1);
   }
 }
+
+
+@media (max-width: 24em) {
+  .cart-details{
+    width: 22rem;
+  }
+ 
+}
