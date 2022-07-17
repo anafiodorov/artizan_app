@@ -76,7 +76,7 @@
   font-size: 1.3rem;
   text-align: center;
 }
-.btn--up {
+.btn--minus {
   transform: translate(0, -120%);
 }
 .button:hover{
@@ -93,10 +93,23 @@
     margin-right: 2rem;
     grid-template-columns: 1fr;
   }
+  .product-item{
+    margin: 2rem;
+  }
  .cart-totals{
   width: 22rem;
  }
  .button{
   margin-left: 3.5rem;
  }
+ .btn{
+  height: 35px;
+  width: 35px;
+ }
+ .btn--minus {
+  transform: translate(0, -160%);
+}
+ .btn--plus {
+  transform: translate(0, -40%);
+}
 }

@@ -34,8 +34,8 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.details-list{
-margin-left: 1rem;
+.details-list {
+  margin-left: 1rem;
 }
 .sizes {
   width: 10rem;
@@ -54,28 +54,52 @@ margin-left: 1rem;
   border: 1px solid rgb(145, 139, 139);
   cursor: pointer;
 }
-.size:hover{
+.size:hover {
   animation: bump 300ms ease-out;
   background-color: rgb(232, 224, 224);
 }
-.size-div{
+.size-div {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.button{
+.button {
   border: 2px solid rgb(189, 181, 181);
   width: 20rem;
 }
-.no-drop{
+.no-drop {
   cursor: no-drop;
 }
-.size-checked{
+.size-checked {
   border: 3px solid black;
 }
-.noitems{
+.noitems {
   color: #ca3e51;
   margin-top: 2rem;
   font-family: 'Marck Script', cursive;
   font-size: 1.2rem;
   font-weight: 600;
+}
+/* MOBILE FORMAT */
+/* IPHONE SE */
+@media (max-width: 24em) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .central-div {
+    align-self: start;
+    margin-left: 2rem;
+  }
+  .img-multiple {
+    justify-self: center;
+  }
+  .central-img {
+    margin-top: 0rem;
+    width: 89%;
+  }
+  .button {
+    width: 13rem;
+  }
+  .dispalay-none{
+    display: none;
+  }
 }

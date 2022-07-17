@@ -120,7 +120,9 @@ const ProductItemDetails = () => {
     <div>
       <Header />
       <div className={classes.grid}>
-        <div className={classes['left-images']}>
+        <div
+          className={` ${classes['dispalay-none']} ${classes['left-images']}`}
+        >
           <img
             className={classes['img-multiple']}
             src={dress1}

@@ -48,18 +48,17 @@ const ViewCart = () => {
                 <div className={classes.remove}>
                   <button
                     onClick={removeItemHandler.bind(null, item)}
-                    className={`${classes.btn} ${classes['btn--up']}`}
+                    className={`${classes.btn} ${classes['btn--minus']}`}
                   >
                     <div>-</div>
                   </button>
                   <button
                     onClick={addItemHandler.bind(null, item)}
-                    className={`${classes.btn}`}
+                    className={`${classes.btn} ${classes['btn--plus']}`}
                   >
                     <div>+</div>
                   </button>
                 </div>
-
                 <div>
                   <CartProductItem
                     key={item.id}
