@@ -14,10 +14,14 @@
 
 @media (max-width: 24em) {
   .item-img{
-    width: 200%;
+    width: 150%;
   }
   .img-title{
+    padding: 1rem 1rem 1rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
     display: grid;
     gap: 3rem;
+    grid-template-columns: 1fr 2fr;
   }
 }

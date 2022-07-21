@@ -240,6 +240,7 @@ const ProductItemDetails = () => {
           </ul>
 
           <button
+            // disabled={size === ''}
             onMouseEnter={() => setMessageNoSize(true)}
             onMouseLeave={() => setMessageNoSize(false)}
             onClick={onClick}
