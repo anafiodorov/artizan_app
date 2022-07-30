@@ -93,6 +93,9 @@ const ProductItemDetails = () => {
   };
 
   const onClick = () => {
+    if (size === '') {
+      return;
+    }
     dispatch(
       cartActions.addToCart({
         id: item.id,
