@@ -63,7 +63,7 @@ const ProductItem = (props) => {
           to={`/product-item-details?productId=${props.item.id}`}
         >
           <figure className={classes['gallery-item']}>
-            <img src={urlProduct} alt='Photo of beautifully arranged food' />
+            <img src={urlProduct} alt='Photo dess' />
             <div className={classes['gallery-title']}>{props.item.name}</div>
             <div className={classes['gallery-price']}>
               {props.item.price + ' RON'}
@@ -73,7 +73,7 @@ const ProductItem = (props) => {
         </Link>
       ) : (
         <figure className={classes['gallery-item']}>
-          <img src={urlProduct} alt='Photo of beautifully arranged food' />
+          <img src={urlProduct} alt='Photo dess' />
           <div className={classes['gallery-title']}>{props.item.name}</div>
           <div className={classes['gallery-price']}>
             {props.item.price + ' RON'}

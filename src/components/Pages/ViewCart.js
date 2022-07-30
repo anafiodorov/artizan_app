@@ -45,20 +45,25 @@ const ViewCart = () => {
           <div>
             {cartItems.map((item) => (
               <div className={classes['product-item']}>
-                <div className={classes['add-remove']}>
-                  <button
-                    onClick={removeItemHandler.bind(null, item)}
-                    className={`${classes.btn} ${classes['btn--minus']}`}
-                  >
-                    <div>-</div>
-                  </button>
-                  <button
-                    onClick={addItemHandler.bind(null, item)}
-                    className={`${classes.btn} ${classes['btn--plus']}`}
-                  >
-                    <div>+</div>
-                  </button>
+                <div className={classes['buttons']}>
+                  <div className={classes['button-div-minus']}>
+                    <button
+                      onClick={removeItemHandler.bind(null, item)}
+                      className={`${classes.btn} ${classes['btn--minus']}`}
+                    >
+                      <div>-</div>
+                    </button>
+                  </div>
+                  <div className={classes['button-div-plus']}>
+                    <button
+                      onClick={addItemHandler.bind(null, item)}
+                      className={`${classes.btn} ${classes['btn--plus']}`}
+                    >
+                      <div>+</div>
+                    </button>
+                  </div>
                 </div>
+
                 <div>
                   <CartProductItem
                     key={item.id}
@@ -87,7 +92,9 @@ const ViewCart = () => {
             <div>{`Total : ${cartTotalAmount} RON`}</div>
           </div>
           <Link to='/checkout'>
-            <button className={classes.button}>Proceed to checkout</button>
+            <button className={classes['button-checkout']}>
+              Proceed to checkout
+            </button>
           </Link>
         </div>
       </div>
