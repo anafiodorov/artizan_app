@@ -22,7 +22,7 @@
 /* MOBILE FORMAT */
 /* IPHONE SE */
 
-@media (max-width: 24em) {
+@media (max-width: 26em) {
   .gallery {
     grid-template-columns: 1fr;
     gap: 2rem;

@@ -10,7 +10,7 @@
   border-bottom: 1px solid rgb(224, 219, 219);
 }
 
-@media (max-width: 24em) {
+@media (max-width: 26em) {
   .item-img {
     width: 100%;
   }

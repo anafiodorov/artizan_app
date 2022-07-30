@@ -81,7 +81,7 @@
 }
 /* MOBILE FORMAT */
 /* IPHONE SE */
-@media (max-width: 24em) {
+@media (max-width: 26em) {
   .grid {
     grid-template-columns: 1fr;
   }

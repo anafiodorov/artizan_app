@@ -89,7 +89,7 @@ grid-template-columns: 1fr;
 /* MOBILE FORMAT */
 /* IPHONE SE */
 
-@media (max-width: 24em) {
+@media (max-width: 26em) {
   .main{
     grid-template-columns: 1fr 1fr;
     padding: 3rem;

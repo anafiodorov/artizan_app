@@ -85,7 +85,7 @@ align-self: flex-start;
 
 /* MOBILE FORMAT */
 /* IPHONE SE */
-@media (max-width: 24em) {
+@media (max-width: 26em) {
   .grid{
     margin-top: 2rem;
     margin-bottom: 2rem;
