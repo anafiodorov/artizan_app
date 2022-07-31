@@ -9,7 +9,6 @@ const PriceSlider = () => {
 
   const valuetext = (value) => {
     dispatch(priceActions.addPrice(value));
-    console.log(value);
   };
 
   return (

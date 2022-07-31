@@ -53,7 +53,6 @@ const ProductItem = (props) => {
         urlProduct: urlProduct,
       })
     );
-    console.log(item);
   };
   return (
     <div>

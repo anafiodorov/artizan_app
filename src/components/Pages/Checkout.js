@@ -18,10 +18,6 @@ const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const hasItems = cartItems.length > 0;
-
-  console.log('Items in cart');
-
-  console.log(cartItems);
   const [error, setError] = useState('');
   const [order, setOrder] = useState({
     firstName: '',
@@ -94,8 +90,6 @@ const Checkout = () => {
       enteredPhoneIsValid &&
       enteredEmailIsValid;
 
-    console.log(order);
-
     let orders = {
       order: cartItems,
       firstName: order.firstName,
@@ -125,8 +119,6 @@ const Checkout = () => {
           setError('Error');
         }
       });
-
-      console.log(responseUserData);
     };
     if (!formIsValid) {
       return console.log('Formularul nu este valid');

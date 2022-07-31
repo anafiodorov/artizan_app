@@ -12,8 +12,6 @@ const Composition = () => {
     lana_poliamida: false,
   });
 
-  console.log(isChecked);
-
   const handleChange = (evt) => {
     setChecked({
       ...isChecked,

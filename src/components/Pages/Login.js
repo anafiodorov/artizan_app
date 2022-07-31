@@ -25,7 +25,6 @@ const Login = () => {
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    console.log('UserData' + JSON.stringify(userInput));
     let responseUserData = await fetch(
       `${process.env.REACT_APP_SERVER_URL}/login`,
       {
@@ -35,10 +34,9 @@ const Login = () => {
       }
     );
     let userLoginData = await responseUserData.json();
-    console.log('LoginData ' + userLoginData['accessToken']);
+
     const { accessToken } = userLoginData;
-    console.log('All' + JSON.stringify(userLoginData));
-    console.log('UserLoginData ' + userLoginData['name']);
+
     // authCtx.setAuthUser(userLoginData);
     // console.log('Ctx user' + JSON.stringify(authCtx.user));
     // console.log(authCtx.user['name']);

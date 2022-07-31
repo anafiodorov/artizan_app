@@ -21,14 +21,10 @@ const Header = (props) => {
       );
       const categories = await fetchedCategories.json();
 
-      console.log(categories);
-
       const fetchedBrands = await fetch(
         `${process.env.REACT_APP_SERVER_URL}/brands`
       );
       const brands = await fetchedBrands.json();
-
-      console.log(brands);
 
       if (isMounted) {
         dispatch(categoriesActions.addCategories(categories));

@@ -26,15 +26,11 @@ const ProductItemDetails = () => {
     40: false,
   });
 
-  console.log(size);
-
   const { search } = useLocation();
 
   const productId = new URLSearchParams(search).get('productId');
   const productUrlRef = ref(storage, productId + '.jpeg');
   const products = useSelector((state) => state.products.products);
-
-  console.log(products);
 
   const getPicturesFirebase = (pictureRef, setUrl) => {
     getDownloadURL(pictureRef)
@@ -63,7 +59,6 @@ const ProductItemDetails = () => {
   };
 
   useEffect(() => {
-    console.log('Effect');
     const fetchData = async () => {
       let url = `${process.env.REACT_APP_SERVER_URL}/products`;
       const items = await fetch(url);
@@ -71,14 +66,10 @@ const ProductItemDetails = () => {
       dispatch(productsActions.addProducts(products));
     };
     if (products.length == 0) {
-      console.log('IF');
-
       fetchData();
     }
     getPicturesFirebase(productUrlRef, setUrlProduct);
   }, []);
-
-  console.log(products);
 
   const item = products.find((item) => {
     return item.id == productId;
@@ -118,7 +109,6 @@ const ProductItemDetails = () => {
     // }, 3000);
   };
 
-  console.log(size);
   return (
     <div>
       <Header />

@@ -20,9 +20,6 @@ const Products = () => {
   const price = useSelector((state) => state.price.price);
   const sizesFilter = useSelector((state) => state.size.size);
 
-  console.log(productList);
-  console.log(sizesFilter);
-
   const category = new URLSearchParams(search).get('category');
   const brand = new URLSearchParams(search).get('brand');
 
@@ -34,8 +31,6 @@ const Products = () => {
     let isMounted = true;
     const fetchData = async () => {
       let url = `${process.env.REACT_APP_SERVER_URL}/products`;
-      console.log('Log: ' + `${process.env.REACT_APP_TEST}`);
-      console.log(url);
       if (category) {
         url = url + `?category=${category}`;
       } else if (brand) {
@@ -70,8 +65,6 @@ const Products = () => {
       ? productList
       : productList.filter((item) => {
           const sizeCheck = (el) => {
-            console.log(sizesFilter);
-            console.log(el);
             return sizesFilter['S' + el] === true;
           };
           return item.sizes.some(sizeCheck);

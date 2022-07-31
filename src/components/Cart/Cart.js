@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
@@ -6,11 +6,32 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartLength = useSelector((state) =>
+    state.cart.cartItems.reduce((total, item) => item.amount + total, 0)
+  );
+
+  console.log(cartLength);
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const itemsCount = useSelector((state) => state.cart.itemsCount);
   const hasItems = cartItems.length > 0;
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
+
+  const mounted = useRef(false);
+  useEffect(() => {
+    if (!mounted.current) {
+      mounted.current = true;
+    } else {
+      setBtnIsHighlighted(true);
+      const timer = setTimeout(() => {
+        setBtnIsHighlighted(false);
+      }, 300);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [cartLength]);
   // useEffect(() => {
+  //   console.log('cart effect');
   //   if (cartItems.length === 0) {
   //     return;
   //   }
@@ -22,6 +43,8 @@ const Cart = () => {
   //     clearTimeout(timer);
   //   };
   // }, [cartItems.length]);
+
+  // console.log(cartItems.length);
 
   const cartClasses = `${classes.cart} ${btnIsHighlighted ? classes.bump : ''}`;
 

@@ -54,7 +54,6 @@ const SignUp = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(JSON.stringify(userInput));
     fetch(`${process.env.REACT_APP_SERVER_URL}/signup`, {
       method: 'POST',
       headers: {
