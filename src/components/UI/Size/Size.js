@@ -1,12 +1,12 @@
-import classes from './Size.module.css';
 import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import size, { sizeActions } from '../../../store/size';
+import { sizeActions } from '../../../store/size';
+import SizeCheckboxItem from './SizeCheckboxItem';
 
 const Size = () => {
   const dispatch = useDispatch();
   const sizesFilter = useSelector((state) => state.size.size);
-  const [sizeFromDb, setSizeFromDb] = useState('');
+  const [sizeFromDb, setSizeFromDb] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       let url = `${process.env.REACT_APP_SERVER_URL}/size`;
@@ -26,130 +26,14 @@ const Size = () => {
       })
     );
   };
-  // const sizesFromDB = sizeFromDb.map((size) => (
-  //   <div className={classes.grid}>
-  //     <input
-  //       name='S32'
-  //       type='checkbox'
-  //       checked={sizesFilter.S32}
-  //       onChange={handleChange}
-  //     />
-  //     <label className={classes['input-text']}>{size.name}</label>
-  //   </div>
-  // ));
-  return (
-    <Fragment>
-      {/* {sizesFromDB} */}
-      <div className={classes.grid}>
-        <input
-          name='32'
-          type='checkbox'
-          checked={sizesFilter['32']}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>32</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='34'
-          type='checkbox'
-          checked={sizesFilter['34']}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>34</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='36'
-          type='checkbox'
-          checked={sizesFilter['36']}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>36</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='38'
-          type='checkbox'
-          checked={sizesFilter['38']}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>38</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='40'
-          type='checkbox'
-          checked={sizesFilter['40']}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>40</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='42'
-          type='checkbox'
-          checked={sizesFilter['42']}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>42</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='XS'
-          type='checkbox'
-          checked={sizesFilter.XS}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>XS</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='S'
-          type='checkbox'
-          checked={sizesFilter.S}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>S</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='M'
-          type='checkbox'
-          checked={sizesFilter.M}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>M</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='L'
-          type='checkbox'
-          checked={sizesFilter.L}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>L</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='XL'
-          type='checkbox'
-          checked={sizesFilter.XL}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>XL</label>
-      </div>
-      <div className={classes.grid}>
-        <input
-          name='XXL'
-          type='checkbox'
-          checked={sizesFilter.XXL}
-          onChange={handleChange}
-        />
-        <label className={classes['input-text']}>XXL</label>
-      </div>
-    </Fragment>
-  );
+  const sizesFromDB = sizeFromDb.map((size) => (
+    <SizeCheckboxItem
+      name={size.name}
+      checked={sizesFilter[size.name]}
+      onChange={handleChange}
+    />
+  ));
+  return <Fragment>{sizesFromDB}</Fragment>;
 };
 
 export default Size;

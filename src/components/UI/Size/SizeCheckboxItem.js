@@ -1,15 +1,16 @@
 import React from 'react';
+import classes from './SizeCheckbox.module.css';
 
-const SizeCheckboxItem = () => {
+const SizeCheckboxItem = (props) => {
   return (
     <div className={classes.grid}>
       <input
-        name='S32'
+        name={props.name}
         type='checkbox'
-        checked={sizesFilter.S32}
-        onChange={handleChange}
+        checked={props.checked}
+        onChange={props.onChange}
       />
-      <label className={classes['input-text']}>32</label>
+      <label className={classes['input-text']}>{props.name}</label>
     </div>
   );
 };
