@@ -1,0 +1,16 @@
+.grid{
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  gap: 0.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+/* MOBILE FORMAT */
+/* IPHONE SE */
+
+@media (max-width: 26em) {
+  .grid{
+    font-size: 0.9rem;
+  }
+}

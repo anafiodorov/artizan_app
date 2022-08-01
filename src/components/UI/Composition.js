@@ -1,4 +1,4 @@
-import classes from './Size.module.css';
+import classes from '../UI/Size/Size.module.css';
 import React, { Fragment, useState } from 'react';
 
 const Composition = () => {

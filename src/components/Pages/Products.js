@@ -5,7 +5,7 @@ import ProductItem from './ProductItem';
 import Header from '../Layout/Header';
 import Footer from '../Layout/Footer';
 import PriceSlider from '../UI/PriceSlider';
-import Size from '../UI/Size';
+import Size from '../UI/Size/Size';
 import Arrow from '../UI/Arrow';
 import Composition from '../UI/Composition';
 import generalStyles from '../../styles/general.module.css';
@@ -65,7 +65,7 @@ const Products = () => {
       ? productList
       : productList.filter((item) => {
           const sizeCheck = (el) => {
-            return sizesFilter['S' + el] === true;
+            return sizesFilter[el] === true;
           };
           return item.sizes.some(sizeCheck);
         })

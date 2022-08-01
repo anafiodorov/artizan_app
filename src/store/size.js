@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialSizeState = {
   size: {
-    S32: false,
-    S34: false,
-    S36: false,
-    S38: false,
-    S40: false,
-    S42: false,
+    32: false,
+    34: false,
+    36: false,
+    38: false,
+    40: false,
+    42: false,
     XS: false,
     S: false,
     M: false,

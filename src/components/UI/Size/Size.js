@@ -1,11 +1,22 @@
 import classes from './Size.module.css';
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { sizeActions } from '../../store/size';
+import size, { sizeActions } from '../../../store/size';
 
 const Size = () => {
   const dispatch = useDispatch();
   const sizesFilter = useSelector((state) => state.size.size);
+  const [sizeFromDb, setSizeFromDb] = useState('');
+  useEffect(() => {
+    const fetchData = async () => {
+      let url = `${process.env.REACT_APP_SERVER_URL}/size`;
+      const sizeFromDb = await fetch(url);
+      const sizeDb = await sizeFromDb.json();
+      setSizeFromDb(sizeDb);
+      console.log('sizes' + JSON.stringify(sizeDb));
+    };
+    fetchData();
+  }, []);
 
   const handleChange = (evt) => {
     dispatch(
@@ -15,58 +26,70 @@ const Size = () => {
       })
     );
   };
+  // const sizesFromDB = sizeFromDb.map((size) => (
+  //   <div className={classes.grid}>
+  //     <input
+  //       name='S32'
+  //       type='checkbox'
+  //       checked={sizesFilter.S32}
+  //       onChange={handleChange}
+  //     />
+  //     <label className={classes['input-text']}>{size.name}</label>
+  //   </div>
+  // ));
   return (
     <Fragment>
+      {/* {sizesFromDB} */}
       <div className={classes.grid}>
         <input
-          name='S32'
+          name='32'
           type='checkbox'
-          checked={sizesFilter.S32}
+          checked={sizesFilter['32']}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>32</label>
       </div>
       <div className={classes.grid}>
         <input
-          name='S34'
+          name='34'
           type='checkbox'
-          checked={sizesFilter.S34}
+          checked={sizesFilter['34']}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>34</label>
       </div>
       <div className={classes.grid}>
         <input
-          name='S36'
+          name='36'
           type='checkbox'
-          checked={sizesFilter.S36}
+          checked={sizesFilter['36']}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>36</label>
       </div>
       <div className={classes.grid}>
         <input
-          name='S38'
+          name='38'
           type='checkbox'
-          checked={sizesFilter.S38}
+          checked={sizesFilter['38']}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>38</label>
       </div>
       <div className={classes.grid}>
         <input
-          name='S40'
+          name='40'
           type='checkbox'
-          checked={sizesFilter.S40}
+          checked={sizesFilter['40']}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>40</label>
       </div>
       <div className={classes.grid}>
         <input
-          name='S42'
+          name='42'
           type='checkbox'
-          checked={sizesFilter.S42}
+          checked={sizesFilter['42']}
           onChange={handleChange}
         />
         <label className={classes['input-text']}>42</label>
