@@ -42,6 +42,7 @@ const Products = () => {
       if (isMounted) {
         dispatch(productsActions.addProducts(items));
       }
+      console.log(items);
     };
 
     fetchData();
