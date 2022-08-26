@@ -85,7 +85,12 @@ grid-template-columns: 1fr;
   text-decoration: none;
   color: black;
 }
-
+.message{
+  margin: 2rem;
+  text-align: center;
+  color: brown;
+  font-weight: 900;
+}
 /* MOBILE FORMAT */
 /* IPHONE SE */
 

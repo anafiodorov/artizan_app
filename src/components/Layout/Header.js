@@ -40,6 +40,12 @@ const Header = (props) => {
 
   return (
     <Fragment>
+      {categories.length == 0 && (
+        <p className={classes.message}>
+          The website needs a few moments to wake up :) Please reload the page
+          after 30 seconds!
+        </p>
+      )}
       <div className={`${classes.main} ${generalStyles['background-color']}`}>
         <Link to='/' className={classes.title}>
           Artizan
